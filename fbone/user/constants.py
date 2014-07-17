@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+# TO use when makin new user
 # User role
 ADMIN = 0
 STAFF = 1

@@ -8,9 +8,11 @@ from flask.ext.babel import gettext as _
 from flask.ext.login import login_required, current_user
 from fbone.message.forms import CreateMessageForm, ResponseMessageForm
 from fbone.message.models import Message
+from fbone.echo.forms import CreateEchoForm
+from fbone.echo.models import Echo
 from .models import User
 
-
+# Now whenever i wanna call a user, I can do url_for('user.profile')
 user = Blueprint('user', __name__, url_prefix='/user')
 
 
@@ -21,6 +23,7 @@ user = Blueprint('user', __name__, url_prefix='/user')
 def index(offset = 0):
     if not current_user.is_authenticated():
         abort(403)
+    """
     create_form = CreateMessageForm()
     message = Message()
     messages = message.get_all_messages()
@@ -29,8 +32,18 @@ def index(offset = 0):
     print "test:"
     print msgs
     form = ResponseMessageForm(offset = offset,yes='1',no='2')
-    return render_template('user/index.html', user=current_user,form=create_form,response_form = form,messages=msgs,offset=offset)
-
+    return render_template('user/index.html', user=current_user,form=create_form,response_form = form,messages=msgs,offset=offset)"""
+    create_form = CreateEchoForm()
+    echo = Echo()
+    echos = echo.get_all_echos()
+    message = Message()
+    messages = message.get_all_messages()
+    msgs = Message()
+    msgs = msgs.get_messages_feed(current_user)
+    print "test:"
+    print msgs
+    form = ResponseMessageForm(offset = offset,yes='1',no='2')
+    return render_template('user/index.html', user=current_user,form=create_form,response_form = form,messages=msgs,offset=offset,echos=echos)
 
 
 @user.route('/<int:user_id>/profile')

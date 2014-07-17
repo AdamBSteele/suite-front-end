@@ -9,6 +9,7 @@ from .config import DefaultConfig
 from .user import User, user
 from .settings import settings
 from .message import message
+from .echo import echo
 from .frontend import frontend
 from .api import api
 from .admin import admin
@@ -27,6 +28,7 @@ DEFAULT_BLUEPRINTS = (
     api,
     message,
     admin,
+    echo
 )
 
 

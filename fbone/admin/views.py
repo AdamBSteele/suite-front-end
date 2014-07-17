@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#View in admin corresponds to template in admin
 
 from flask import Blueprint, render_template, request, flash, current_app, send_from_directory, redirect, url_for
 from flask.ext.login import login_required

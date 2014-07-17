@@ -23,7 +23,7 @@
 
 
 <h2> {{_('Hello')}}, {{ user.name }}!</h2>
-{{ render_form(url_for('message.add_message'), form) }}
+{{ render_form(url_for('echo.add_echo'), form) }}
 <strong><p class="text-info"> {{_('Accepted')}} </p></strong>
   <ul class=messages>
   {% for message in messages.replied_messages %}

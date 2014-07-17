@@ -12,7 +12,7 @@ class BaseConfig(object):
     # Get app root path, also can use flask.root_path.
     # ../../config.py
     PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-
+    print ("PROJECTROOT" + PROJECT_ROOT)
     DEBUG = True
     TESTING = True
 
@@ -44,8 +44,9 @@ class DefaultConfig(BaseConfig):
     # Flask-Sqlalchemy: http://packages.python.org/Flask-SQLAlchemy/config.html
     SQLALCHEMY_ECHO = True
     # SQLITE for prototyping.
-    # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + INSTANCE_FOLDER_PATH + '/db.sqlite'
-    SQLALCHEMY_DATABASE_URI = 'postgres://ss:ss@localhost/manekineko'
+    PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + PROJECT_ROOT + 'db.sqlite'
+    # SQLALCHEMY_DATABASE_URI = 'postgres://ss:ss@localhost/manekineko'
     # MYSQL for production.
     #SQLALCHEMY_DATABASE_URI = 'mysql://username:password@server/db?charset=utf8'
 
