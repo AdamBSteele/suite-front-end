@@ -24,6 +24,14 @@
 
 <h2> {{_('Hello')}}, {{ user.name }}!</h2>
 {{ render_form(url_for('echo.add_echo'), form) }}
+<strong><p class="text-info"> {{_('Queued Tweets')}} </p></strong>
+  <ul class= echoes>
+  {% for echo in echoes %}
+  <li>
+    <strong> {{ echo.text }} </strong> <small> {{ echo.time }} </small>
+  {% endfor %}
+</ul>
+<hr>
 <strong><p class="text-info"> {{_('Accepted')}} </p></strong>
   <ul class=messages>
   {% for message in messages.replied_messages %}
