@@ -1,51 +1,25 @@
-# INTRODUCTION
+#Parrot Client
+A open-source, multifunctional Twitter manager
 
-Fbone (Flask bone) is a [Flask](http://flask.pocoo.org) (Python microframework) template/bootstrap/boilerplate application, with best practices.
+###ParrotFunctionality
+####Echoes
+Echoes allow a user to schedule a tweet to be posted at a later time
 
-You can use it for
+####Squawks
+Squawks allow a user to create a collection of tweets which will be posted over a user-designed stretch of time.
 
-- learning Flask.
-- kicking off your new project faster.
 
-![Flask bone homepage screenshot](http://github.com/imwilsonxu/fbone/raw/master/screenshots/flask-bone-homepage-screenshot.png)
+###Parrot Client is currently under development.
+*  [X]  Establish Twitter connection
+*  [X]  Build simple back-end
+*  [W]  Build simple front-end
+*  [ ]  Create DB
+*  [ ]  Support user log-in
+*  [ ]  Extend functionality
+*  [ ]  UI Improvements
 
-## FEATURES
 
-### Frontend Framework
-
-- [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
-- [jQuery](http://jquery.com/). 
-- [bootstrap](https://github.com/twitter/bootstrap).
-
-### Flask Extensions
-
-- Handle **orm** with [SQLAlchemy](http://www.sqlalchemy.org).
-- Handle **web forms** with [WTForms](http://wtforms.simplecodes.com/).
-- Implement **user session management (signin/signout/rememberme)** with [Flask-Login](https://github.com/maxcountryman/flask-login).
-- Implement **reset password via email** with [Flask-Mail](http://packages.python.org/Flask-Mail/).
-- Implement **unit testing** with [Flask-Testing](http://packages.python.org/Flask-Testing/).
-- Implement **external script (initdb/testing/etc)** with [Flask-Script](http://flask-script.readthedocs.org/en/latest/).
-- Handle **i18n** with [Flask-Babel](http://packages.python.org/Flask-Babel/).
-
-### Others
-
-- Well designed structure for **large project**.
-- Quickly Deploy via [mod\_wsgi](flask.pocoo.org/docs/deploying/mod_wsgi/) and [fabric](flask.pocoo.org/docs/patterns/fabric/).
-- Admin interface.
-- Home-bake logger.
-
-## USAGE
-
-Pre-required:
-
-- Ubuntu (should be fine in other linux distro)
-- git
-- pip
-- fabric
-- sqlite
-- virtualenv
-- apache + mod\_wsgi
-
+###Usage
 Clone.
 
     git clone https://github.com/imwilsonxu/fbone.git fbone
