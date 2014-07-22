@@ -1,10 +1,10 @@
 
 
 from flask.ext.wtf import Form
-from flask.ext.wtf.html5 import URLField, EmailField, TelField
+from flask.ext.wtf.html5 import URLField, EmailField, TelField, DateField
 from wtforms import (ValidationError, TextField, HiddenField, PasswordField,
     SubmitField, TextAreaField, IntegerField, RadioField,FileField,
-    DecimalField, SelectField, DateField, Field, widgets)
+    DecimalField, SelectField, Field, widgets) # DateField, 
 from wtforms.validators import (Required, Length, EqualTo, Email, NumberRange, AnyOf, Optional)
 from flask.ext.babel import lazy_gettext as _
 from .models import Echo
@@ -14,7 +14,7 @@ from datetime import datetime
 class CreateEchoForm(Form):
     text = TextField(_('What do you want to post?'), [Required()],
             description=_("Post will appear on your time line"))
-    time = TextField(_('When do you want to post?'), [Required()],
+    time = DateField(_('When do you want to post?'), [Required()],
         description=_("Post will be made at this time"))
     submit = SubmitField(_('Create Post'))
 

@@ -12,7 +12,7 @@ from fbone.echo.forms import CreateEchoForm
 from fbone.echo.models import Echo
 from .models import User
 
-# Now whenever i wanna call a user, I can do url_for('user.profile')
+# Now whenever i wanna call a user, I can do url_for('user.profile')     
 user = Blueprint('user', __name__, url_prefix='/user')
 
 
@@ -32,10 +32,11 @@ def index(offset = 0):
     print "test:"
     print msgs
     form = ResponseMessageForm(offset = offset,yes='1',no='2')
-    return render_template('user/index.html', user=current_user,form=create_form,response_form = form,messages=msgs,offset=offset)"""
+    return render_template('user/index.html', user=current_user,form=create_form,response_form = form,messages=msgs,offset=offset)
+    """
     create_form = CreateEchoForm()
     echo = Echo()
-    echos = echo.get_all_echos()
+    echoes = echo.get_all_echos()
     message = Message()
     messages = message.get_all_messages()
     msgs = Message()
@@ -43,7 +44,7 @@ def index(offset = 0):
     print "test:"
     print msgs
     form = ResponseMessageForm(offset = offset,yes='1',no='2')
-    return render_template('user/index.html', user=current_user,form=create_form,response_form = form,messages=msgs,offset=offset,echos=echos)
+    return render_template('user/index.html', user=current_user,form=create_form,response_form = form,messages=msgs,offset=offset,echoes=echoes)
 
 
 @user.route('/<int:user_id>/profile')

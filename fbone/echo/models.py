@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, ForeignKey, not_
@@ -13,7 +14,7 @@ class Echo(db.Model):
     echo_id = Column(db.Integer, primary_key=True)
     user_id = Column(db.Integer,ForeignKey('users.id', onupdate="CASCADE", ondelete="RESTRICT"), nullable=False)
     text = Column(db.Text, nullable=False)
-    time = Column(db.Text, nullable=False)
+    time = Column(db.DateTime)
     pub_date = Column(db.DateTime, default=get_current_time)
     publish_user = relationship('User', backref = 'echo', primaryjoin = "Echo.user_id == User.id")
     parent_id = Column(db.Integer,ForeignKey('echo.echo_id', onupdate="CASCADE", ondelete="RESTRICT"), nullable=True)
